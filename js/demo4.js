@@ -1,5 +1,20 @@
 if (typeof Genesys == "undefined") {
   genesysWidget();
+  Genesys("subscribe", "Journey.ready", function() {
+    // rastrear desplazmiento en pagina
+    Genesys("command", "Journey.trackScrollDepth", {
+      scrollDepthEvents: [
+        {
+          percentage: 90,
+          eventName: "final_de_pagina_alcanzado",
+          customAttributes: {
+            dato3: "valor3"
+          }
+        },
+      ]
+    });
+    });
+
 }
 
 function record_abandono_booking() {
