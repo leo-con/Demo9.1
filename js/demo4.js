@@ -3,7 +3,7 @@ if (typeof Genesys == "undefined") {
 }
 
 function record_abandono_booking() {
-  Genesys("command", "Journey.record", { eventName: "abandono_booking" },   customAttributes : { dato1: "valor1", dato2 : "valor2"});
+  Genesys("command", "Journey.record", { eventName: "abandono_booking", customAttributes : { dato1: "valor1", dato2 : "valor2"} });
 }
 
 function genesysWidget() {
